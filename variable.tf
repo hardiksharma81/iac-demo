@@ -1,29 +1,18 @@
+# Input Variables
 variable "aws_region" {
-  description = "The AWS region to create things in."
+  description = "Region in which AWS resources to be created"
+  type        = string
   default     = "us-east-1"
 }
 
-variable "key_name" {
-  description = " SSH keys to connect to ec2 instance"
-  default     =  "hardik-key"
+variable "ec2_ami_id" {
+  description = "AMI ID"
+  type        = string
+  default     = "ami-0915bcb5fa77e4892" # Amazon2 Linux AMI ID
 }
 
-variable "instance_type" {
-  description = "instance type for ec2"
-  default     =  "t2.micro"
-}
-
-variable "security_group" {
-  description = "Name of security group"
-  default     = "my-jenkins-security-group"
-}
-
-variable "tag_name" {
-  description = "Tag Name of for Ec2 instance"
-  default     = "my-ec2-instance"
-}
-
-variable "ami_id" {
-  description = "AMI for Ubuntu Ec2 instance"
-  default     = "ami-04505e74c0741db8d"
+variable "ec2_instance_count" {
+  description = "EC2 Instance Count"
+  type        = number
+  default     = 1
 }
